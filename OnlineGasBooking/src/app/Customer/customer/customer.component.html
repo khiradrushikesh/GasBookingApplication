@@ -1,0 +1,49 @@
+
+<div class="Panel panel-primary">
+    <div class="panel-heading">
+        <h1> Customers </h1>
+    </div>
+    <div class="panel-body" class="bg-image" style="background-image: image-set('C:\Users\RKHIRAD\Documents\Angular Project\Vegetables Images\GettyImages-1128687123.jpg')" >
+        <table>
+            <thead>
+            <tr>
+                <th>ID </th>
+                <th>Name </th>
+                <th>Username</th>
+                <th> Emailid </th>
+                <th> password </th>
+                <th> Phoneno </th>
+                <th> Address </th>
+                <th> Cylinder ID </th>
+                <th> Bank ID </th>
+                <th> Account Number</th>
+                <th>IFSC Code</th>
+                <th>PAN Number</th>                
+            </tr>
+        </thead>
+        <tbody>
+            
+             <tr *ngFor="let customer of customer_login">
+                <td>{{customer.cid}}</td>
+                <td>{{customer.cname}}</td>
+                <td>{{customer.username}}</td>
+                <td>{{customer.emailId}}</td>
+                <td>{{customer.password}}</td>
+                <td>{{customer.cphoneno}}</td>
+                <td>{{customer.caddress}}</td>
+                <td>{{customer.custCylinderId}}</td>
+                <td>{{customer.custBankId}</td>
+                <td>{{customer.custAccountNo}}</td>
+                <td>{{customer.custIFSCcode}}</td>
+                <td>{{customer.custPANno}}</td>
+                
+                <!-- <td>
+                        <button style="margin: right 16px;" (click)="deleteCustomer(customer.cid)" class="btn btn-danger"> Delete </button></td>
+                        <button style="margin: right 16px; margin-left: 10px;" (click)="updateCustomer(customer.cid)" class="btn btn-success"> Update </button>
+                    </td> -->
+           </tr>
+        </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,88 @@
+<small class="text-danger">{{msg}}</small>
+<div style="background-image: url('assets/Image1/2.jpg');  background-repeat: no-repeat; background-size:cover;">
+<h3 style="text-align: center; color:blue; background-color: silver; font-size: x-large;" >-: Customer Registration  :- </h3>
+
+<div [hidden]="submitted" style="width: 100%;" >
+  <form (ngSubmit)="onSubmit()" >
+    
+    <div class="form-group" style="margin-left: 20px;">
+      <table>
+        <tr>
+          <td><b><label for="name" style="font-size:x-large; color:blueviolet;">Name :- </label></b></td>
+          <td>  <input type="text" minlength="3" maxlength="255" class="form-control" id="cname" required [(ngModel)]="customer_Login.cname" name="cname"  style="margin-left: 45px;"></td>
+        </tr><br>
+
+        <tr>
+          <td><b><label for="name" style="font-size:x-large; color:blueviolet;">Email :- </label></b></td>
+          <td>  <input type="text" class="form-control" id="email" required [(ngModel)]="customer_Login.emailId" name="email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required #email="ngModel" style="margin-left: 45px;"
+            [class.is-invalid]="email.invalid && email.touched"  ></td>
+            <td ><small class="text-white bg-dark" style="margin-left: 80px; font-size: large;" [class.d-none]="email.valid || email.untouched">Email ID is required </small></td> 
+             <!-- <div *ngIf="email.errors && (email.invalid && email.touched)">
+              <small class="text-white bg-dark" *ngIf="email.errors.required">Email.id is required</small>
+              <small class="text-white bg-dark" *ngIf="email.errors.pattern">Enter the valid email ID</small>
+            </div> -->
+        </tr><br>
+
+        <tr>
+            <td><b><label for="name" style="font-size:x-large; color:blueviolet;">Username :- </label></b></td>
+            <td>  <input type="text" class="form-control" id="username" required [(ngModel)]="customer_Login.username" name="username"   style="margin-left: 45px;"
+            ></td>
+        </tr><br>
+
+        <tr>
+          <td><b><label for="name" style="font-size:x-large; color:blueviolet;">Password :- </label></b></td>
+          <td>  <input type="password" class="form-control" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,15}$"  [(ngModel)]="customer_Login.password" name="password"  required #password="ngModel" style="margin-left: 45px;"
+            [class.is-invalid]="password.invalid && password.touched"
+            ></td>
+            <small class="text-white bg-dark" style="margin-left: 80px; font-size: large;" [class.d-none]="password.valid || password.untouched">Enter Valid Password </small>
+        </tr><br>
+
+        <tr>
+          <td><b><label for="name" style="font-size:x-large; color:blueviolet;">Phone No :- </label></b></td>
+          <td>  <input type="text" class="form-control" id="phoneno" pattern="^((\\+91-?)|0)?[0-9]{10}$" required [(ngModel)]="customer_Login.cphoneno" name="phoneno"  required #number="ngModel" style="margin-left: 45px;"
+            [class.is.invalid]="number.invalid && number.touched"
+            ></td>
+            <small class="text-white bg-dark" style="margin-left: 80px; font-size: large;" [class.d-none]="number.valid || number.untouched">Enter Valid Phone Number </small>    
+        </tr><br>
+        
+        <tr>
+          <td><b><label for="name" style="font-size:x-large; color:blueviolet;">Address :- </label></b></td>
+          <td>  <input type="text" class="form-control" id="address" required [(ngModel)]="customer_Login.caddress" name="address"   style="margin-left: 45px;"></td>
+        </tr><br>
+
+        <tr>
+          <td><b><label for="name" style="font-size:x-large; color:blueviolet;"> Cylinder ID :- </label></b></td>
+          <td>  <input type="number" class="form-control" id="custCylinderId" required [(ngModel)]="customer_Login.custCylinderId" name="custCylinderId" required #custCylinderId="ngModel"  style="margin-left: 45px; "   ></td>
+            
+        </tr><br>
+
+        <tr>
+            <td><b><label for="name" style="font-size:x-large; color:blueviolet;"> Bank ID :- </label></b></td>
+            <td>  <input type="number" class="form-control" id="custBankId" required [(ngModel)]="customer_Login.custBankId" name="custBankId" required #custBankId="ngModel"  style="margin-left: 45px; "   ></td>
+        </tr><br>
+
+        <tr>
+            <td><b><label for="name" style="font-size:x-large; color:blueviolet;"> Customer Account Number  :- </label></b></td>
+            <td>  <input type="number" class="form-control" id="custAccountNo" required [(ngModel)]="customer_Login.custAccountNo" name="custAccountNo" required #custAccountNo="ngModel"  style="margin-left: 45px; "   ></td>
+        </tr><br>
+
+        <tr>
+            <td><b><label for="name" style="font-size:x-large; color:blueviolet;"> Customer IFSC Code  :- </label></b></td>
+            <td>  <input type="text" class="form-control" id="custIFSCcode" required [(ngModel)]="customer_Login.custIFSCcode" name="custIFSCcode" required #custIFSCcode="ngModel"  style="margin-left: 45px; "   ></td>
+        </tr><br>
+
+        <tr>
+            <td><b><label for="name" style="font-size:x-large; color:blueviolet;"> Customer PAN Number  :- </label></b></td>
+            <td>  <input type="text" class="form-control" id="custPANno" required [(ngModel)]="customer_Login.custPANno" name="custPANno" required #custPANno="ngModel"  style="margin-left: 45px; "   ></td>
+        </tr><br>
+
+     </table>
+    </div>
+    <b><button class="btn btn-success" style="font-weight: bold; font-size:large">Create Customer</button></b>
+    <b><input type="reset" class="btn btn-danger" style="margin-left: 65px;font-size:large; align-items: center; font-weight:bold;"> </b>
+  </form>
+</div>
+
+
+</div>
+
